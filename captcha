@@ -1,0 +1,29 @@
+import random
+
+import string
+
+From PIL Import Image, ImageDraw, ImageFont
+
+def generate_captcha(): Generate a random string of 5 characters characters string.ascii letters string.digits captcha text ".join(random.choices (characters, k-5))
+
+Create an image with white background
+
+image Image.new('RGB', (150, 50), 'white') draw ImageDraw.Draw (image)
+
+#Load a font font ImageFont.truetype("arial.ttf", 40)
+
+Draw the text on the image draw.text((20, 5), captcha_text, font-font, fill-'black')
+
+#Add some noise (optional) for in range (30):
+
+x1 yl random.randint(0, 150) random.randint(0, 50)
+
+x2 random.randint(0, 150) y2 random.randint(0, 50)
+
+draw.line(((x1, y1), (x2, y2)), fill-'black', width=1)
+
+Save the image image.save('captcha.png')
+
+return captcha text
+
+Generate and save the CAPTCHA captcha text generate captcha () print (f"Captcha text: (captcha_text)")
